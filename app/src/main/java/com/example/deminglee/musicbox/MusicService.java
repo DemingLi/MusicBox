@@ -40,6 +40,7 @@ public class MusicService extends Service {
           if (mediaPlayer != null) {
             mediaPlayer.stop();
             try {
+              mediaPlayer.reset();
               mediaPlayer.setDataSource("data/melt.mp3");
               mediaPlayer.prepare();
               mediaPlayer.setLooping(true);
