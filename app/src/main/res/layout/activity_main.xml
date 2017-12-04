@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.deminglee.musicbox.MainActivity">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="80dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img"/>
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAY"
+        app:layout_constraintRight_toLeftOf="@+id/stop"
+        app:layout_constraintTop_toTopOf="@+id/stop"/>
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUIT"
+        app:layout_constraintLeft_toRightOf="@+id/stop"
+        app:layout_constraintTop_toTopOf="@+id/stop"/>
+
+    <TextView
+        android:id="@+id/currenttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintRight_toLeftOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/seekBar"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        android:layout_marginRight="30dp"/>
+
+    <TextView
+        android:id="@+id/endtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintLeft_toRightOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/seekBar"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/currenttime"
+        app:layout_constraintLeft_toLeftOf="@+id/currenttime"
+        android:layout_marginBottom="3dp"/>
+
+
+</android.support.constraint.ConstraintLayout>
