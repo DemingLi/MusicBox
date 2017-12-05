@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
           } else {
             objectAnimator.resume();
             state.setText("Playing");
-            play.setText("PAUSED");
+            play.setText("PAUSE");
             flag = true;
           }
           break;
