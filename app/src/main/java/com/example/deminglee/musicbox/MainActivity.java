@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    //验证权限//
     verifyStoragePermissions(MainActivity.this);
     sc = new ServiceConnection() {
       @Override
       public void onServiceConnected(ComponentName componentName, IBinder service) {
         mBinder = service;
       }
-  
       @Override
       public void onServiceDisconnected(ComponentName componentName) {
         sc = null;
@@ -85,15 +85,11 @@ public class MainActivity extends AppCompatActivity {
                 Seek(seekBar.getProgress());
               }
             }
-  
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-    
             }
-  
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-    
             }
           });
           break;
@@ -228,9 +224,10 @@ public class MainActivity extends AppCompatActivity {
   }
   
   public void verifyStoragePermissions(Activity activity) {
-    try {
+    try {//检测是否有读取权限
       int permission = ActivityCompat.checkSelfPermission(activity, "READ_EXTERNAL_STORAGE");
       if (permission != PackageManager.PERMISSION_GRANTED) {
+        //没有权限，去申请读取的权限，弹出对话框
         ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
       } else {
         hasPermission = true;
